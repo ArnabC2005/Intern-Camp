@@ -11,18 +11,18 @@ require("dotenv").config();
 
 (async () => {
   try {
-    console.log('⏳ Connecting to MongoDB...');
+    console.log(' Connecting to MongoDB...');
     await mongoose.connect(process.env.MONGO_URI, {
       serverSelectionTimeoutMS: 10000,
       family: 4, // Forces IPv4, helps on Windows networks
     });
 
-    console.log('✅ MongoDB connected to host:', mongoose.connection.host);
-    console.log('📦 Using database:', mongoose.connection.name);
+    console.log(' MongoDB connected to host:', mongoose.connection.host);
+    console.log(' Using database:', mongoose.connection.name);
 
-    // app.listen(PORT, () => console.log(🚀 Server running on port ${PORT}));
+    // app.listen(PORT, () => console.log( Server running on port ${PORT}));
   } catch (err) {
-    console.error('❌ MongoDB connection error:', err.message);
+    console.error(' MongoDB connection error:', err.message);
     process.exit(1);
   }
 })();
